@@ -66,6 +66,17 @@ function TicTacToe() {
 
         checkWinner(squares);
         setCells(squares);
+        
+        const notEmpty = squares.every( ( item ) => {
+            return item != "";
+        });
+
+        if( notEmpty ) {
+            
+            setTimeout(() => {
+                setCells(Array(9).fill(""));
+            }, 1500);
+        }
     }
 
     const handleReset = () => {
